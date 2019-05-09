@@ -52,7 +52,7 @@ NavigatorTrack.propTypes = {
   hoveredVariant: PropTypes.string,
   onNavigatorClick: PropTypes.func.isRequired,
   title: PropTypes.string,
-  variants: PropTypes.arrayOf(PropTypes.object).isRequired, // eslint-disable-line react/forbid-prop-types
+  variants: PropTypes.arrayOf(PropTypes.object), // eslint-disable-line react/forbid-prop-types
   visibleVariantWindow: PropTypes.arrayOf(PropTypes.number).isRequired,
 }
 
@@ -60,4 +60,5 @@ NavigatorTrack.defaultProps = {
   height: 60,
   hoveredVariant: null,
   title: '',
+  variants: [{}]
 }
