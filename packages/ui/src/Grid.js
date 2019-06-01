@@ -245,7 +245,6 @@ export class Grid extends Component {
       if (this.focusedElement) {
         this.focusedElement = null
       }
-      this.gridElement.current.setAttribute('tabindex', 0)
     }
 
     const { onVisibleRowsChange } = this.props
