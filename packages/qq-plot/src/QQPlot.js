@@ -20,7 +20,7 @@ export const QQPlot = ({ dataPoints, height, onClickPoint, pointLabel, width, xL
     .nice()
 
   const yScale = scaleLinear()
-    .domain([0, -Math.log10(minPval)])
+    .domain([4, -Math.log10(minPval)])
     .range([height - margin.top - margin.bottom, 0])
     .nice()
 
@@ -97,22 +97,22 @@ export const QQPlot = ({ dataPoints, height, onClickPoint, pointLabel, width, xL
 
     ctx.transform(1, 0, 0, 1, margin.left, height - margin.bottom)
 
-    const xTicks = xScale.ticks()
-    for (let i = 0; i < xTicks.length; i += 1) {
-      const t = xTicks[i]
-      const x = xScale(t)
+    // const xTicks = xScale.ticks()
+    // for (let i = 0; i < xTicks.length; i += 1) {
+    //   const t = xTicks[i]
+    //   const x = yScale(t)
 
-      ctx.beginPath()
-      ctx.moveTo(x, 0)
-      ctx.lineTo(x, 3)
-      ctx.strokeStyle = '#333'
-      ctx.stroke()
+    //   ctx.beginPath()
+    //   ctx.moveTo(x, 0)
+    //   ctx.lineTo(x, 3)
+    //   ctx.strokeStyle = '#333'
+    //   ctx.stroke()
 
-      ctx.font = '10px sans-serif'
-      ctx.fillStyle = '#000'
-      const { width: tickLabelWidth } = ctx.measureText(`${t}`)
-      ctx.fillText(`${t}`, x - tickLabelWidth / 2, 13)
-    }
+    //   ctx.font = '10px sans-serif'
+    //   ctx.fillStyle = '#000'
+    //   const { width: tickLabelWidth } = ctx.measureText(`${t}`)
+    //   ctx.fillText(`${t}`, x - tickLabelWidth / 2, 13)
+    // }
 
     ctx.beginPath()
     ctx.moveTo(0, 0)
@@ -133,13 +133,13 @@ export const QQPlot = ({ dataPoints, height, onClickPoint, pointLabel, width, xL
 
     ctx.transform(1, 0, 0, 1, margin.left, margin.top)
 
-    ctx.beginPath()
-    ctx.moveTo(xScale(0), yScale(0))
-    const m = Math.min(xScale.domain()[1], yScale.domain()[1])
-    ctx.lineTo(xScale(m), yScale(m))
-    ctx.strokeStyle = 'red'
-    ctx.lineWidth = 2
-    ctx.stroke()
+    // ctx.beginPath()
+    // ctx.moveTo(xScale(0), yScale(0))
+    // const m = Math.min(xScale.domain()[1], yScale.domain()[1])
+    // ctx.lineTo(xScale(m), yScale(m))
+    // ctx.strokeStyle = 'red'
+    // ctx.lineWidth = 2
+    // ctx.stroke()
 
     ctx.restore()
 
